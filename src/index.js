@@ -10,7 +10,12 @@ const store = configureStore(reducers, compose(applyMiddleware(thunk)))
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+     </Provider>,   
+    document.getElementById('root')
+);
 
 // we are connecting application to html file
 // we gonna initialize redux 
